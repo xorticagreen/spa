@@ -1,0 +1,12 @@
+{
+    "name": "xorticagreen/spa",
+    "type": "spa",
+    "authors": [
+        {
+            "name": "xorticagreen"
+        }
+    ],
+    "require": {
+      "ext-http": "*"
+    }
+}

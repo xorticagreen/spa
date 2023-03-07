@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Services\Category;
+
+class UpdateService
+{
+    public function update($category, $data): void
+    {
+        $category->update([
+                'name' => strtoupper($data['name']), //масив шаблон для зберігання
+                'description' => $data['description'],
+                'is_published' => $data['is_published'],
+                'is_new' => $data['is_new'],
+                'sort_order' => $data['sort_order'],
+            ]
+        );
+    }
+}
