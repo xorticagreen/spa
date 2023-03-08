@@ -14,7 +14,7 @@ class ShowController extends Controller
         $id = ($request->id);
         $auth_user = Auth::user();
         $user_registrations = User::all()->count();
-        $user = User::find($id);
+        $user = User::withTrashed()->find($id);
         return view('/admin/User/show', compact('user_registrations', 'auth_user', 'user'));
     }
 }

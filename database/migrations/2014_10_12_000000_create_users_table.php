@@ -21,6 +21,7 @@ return new class extends Migration
             //$table->foreignId('role_id')->nullable()->references('id')->on('roles');
             $table->string('role')->nullable()->default('customer');
             $table->string('phone_number')->nullable();
+            //$table->string('status')->nullable()->default('new');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

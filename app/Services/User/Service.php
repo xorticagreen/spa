@@ -24,6 +24,7 @@ class Service
     {
         $user->update(
             [
+                //dd($data),
                 'role' => $data['role'],
             ]
         );

@@ -115,7 +115,6 @@
                                     <th>Role</th>
                                     <th>EmailVerifiedAt</th>
                                     <th>PhoneNumber</th>
-                                    <th>Status</th>
                                     <th>CreatedAt</th>
                                     <th>UpdatedAt</th>
                                     <th>DeletedAt</th>
@@ -139,17 +138,18 @@
                                         <td>
                                             <a href="mailto: {{ $user->email }} ">{{ $user->email }}</a>
                                         </td>
+                                        @if($user->role === 'blocked')
+                                            <td><span class="text-danger">BLOCKED</span><br>by: <a href="{{ route('admin.users.show', $auth_user->id) }}">{{ $auth_user->name }}</a></td>
+                                        @else
                                         <td>
                                             {{ $user->role }}
                                         </td>
+                                        @endif
                                         <td>
                                             {{ $user->email_verified_at }}
                                         </td>
                                         <td>
                                            <a href="tel: {{ $user->phone_number }}">{{ $user->phone_number }}</a>
-                                        </td>
-                                        <td>
-                                            TODO:: get_status
                                         </td>
                                         <td>
                                             {{ $user->created_at }}
@@ -160,7 +160,7 @@
 
                                         @if($user->deleted_at !== NULL)
                                                 <td>{{ $user->deleted_at }}</td>
-                                                <td><a href="{{ route('admin.categories.restore', $user->id) }}" type="submit" class="btn btn-sm btn-warning"><span class="text-light">Restore</span></a></td>
+                                                <td><a href="{{ route('admin.users.restore', $user->id) }}" type="submit" class="btn btn-sm btn-warning"><span class="text-light">Restore</span></a></td>
                                         @else
                                             <td></td>
                                             <td>

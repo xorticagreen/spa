@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\admin\User;
 
-use App\Http\Controllers\admin\User\BaseController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 

@@ -173,7 +173,7 @@
                                                 <td>{{ $category->deleted_at }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.categories.restore', $category->id) }}" type="submit" class="btn btn-sm btn-warning"><span class="text-light">Restore</span></a>
-                                                    <a href="{{ route('admin.categories.force-destroy', $category->id) }}" type="submit" class="btn btn-sm btn-danger"><span class="text-light">Hard Delete</span></a>
+                                                    <a href="{{ route('admin.categories.force-destroy', $category->id) }}" type="submit" class="btn btn-sm btn-danger"><span class="text-light">Force Delete</span></a>
                                                 </td>
                                         @else
                                             <td></td>

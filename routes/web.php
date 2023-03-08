@@ -40,7 +40,9 @@ Route::middleware(['auth', 'verified', 'checkRole'])->group(function () {
             Route::get('/{id}', App\Http\Controllers\admin\User\ShowController::class)->name('admin.users.show');
             Route::post('/', App\Http\Controllers\admin\User\StoreController::class)->name('admin.users.store');
             Route::get('/edit/{id}', App\Http\Controllers\admin\User\EditController::class)->name('admin.users.edit');
-            //Route::get('/{id}/delete', App\Http\Controllers\admin\User\DestroyController::class)->name('admin.users.destroy'); //action soft_delete data
+            Route::get('/{id}/delete', App\Http\Controllers\admin\User\DestroyController::class)->name('admin.users.destroy'); //action soft_delete data
+            Route::get('/restore/{id}', App\Http\Controllers\admin\User\RestoreController::class)->name('admin.users.restore');
+            Route::post('/{id}', App\Http\Controllers\admin\User\UpdateController::class)->name('admin.users.update');
         });
 
     });
